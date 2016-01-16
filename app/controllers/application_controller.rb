@@ -43,7 +43,7 @@ class ApplicationController < ActionController::Base
     }
 
     respond_to do |format|
-      format.json {render json: {info: info.to_json}, status: :ok}
+      format.json {render json: {info: info}, status: :ok}
     end
   end
 
