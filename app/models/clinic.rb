@@ -6,11 +6,11 @@ class Clinic < ActiveRecord::Base
   has_attached_file :image, styles: { thumb: '200x200>', medium: '370x270#'}
   validates_attachment_content_type :image, content_type: /\Aimage\/.*\Z/
 
-  geocoded_by :address, :latitude  => :lat, :longitude => :lng
+  geocoded_by :country_address, :latitude  => :lat, :longitude => :lng
 
-  before_save :get_address
+  before_save :set_address
 
-  def address
+  def country_address
     [country].compact.join(', ')
   end
 
@@ -33,7 +33,7 @@ class Clinic < ActiveRecord::Base
 
   private
 
-  def get_address
+  def set_address
     geo_result = Geocoder.search("#{self.lat},#{self.lng}").first
     self.address = geo_result.formatted_address
   end
