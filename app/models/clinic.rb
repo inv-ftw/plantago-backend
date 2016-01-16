@@ -11,7 +11,7 @@ class Clinic < ActiveRecord::Base
   before_save :get_address
 
   def address
-    [street, city, state, country].compact.join(', ')
+    [country].compact.join(', ')
   end
 
   def as_json(options={})
@@ -21,7 +21,10 @@ class Clinic < ActiveRecord::Base
         name: self.name,
         description: self.description,
         image: self.image.url(:medium),
-        phone: self.phone
+        phone: self.phone,
+        lat: self.lat,
+        lng: self.lng,
+        address: self.address
       }
     else
       super
