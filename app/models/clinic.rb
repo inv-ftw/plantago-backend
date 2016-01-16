@@ -11,7 +11,7 @@ class Clinic < ActiveRecord::Base
   before_save :set_address
 
   def country_address
-    [country].compact.join(', ')
+    ''
   end
 
   def as_json(options={})
