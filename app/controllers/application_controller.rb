@@ -35,7 +35,7 @@ class ApplicationController < ActionController::Base
         phone: p.phone,
         image: p.image
       },
-      emergency_number: '112',
+      emergency_number: '+380674453282',
       formatted_address: formatted_address
     }
 
