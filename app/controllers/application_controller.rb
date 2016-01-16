@@ -25,15 +25,15 @@ class ApplicationController < ActionController::Base
 
     if physician.any?
       p.name = physician.name
-      p.phone = physician.name
+      p.phone = physician.phone
       p.image = physician.image.url(:thumb)
     end
 
     info = {
       physician: {
-        name: p.name,
-        phone: p.phone,
-        image: p.image
+        name: p[:name],
+        phone: p[:phone],
+        image: p[:image]
       },
       emergency_number: '+380674453282',
       formatted_address: formatted_address
