@@ -8,6 +8,8 @@ class Clinic < ActiveRecord::Base
 
   geocoded_by :address, :latitude  => :lat, :longitude => :lng
 
+  before_save :get_address
+
   def address
     [street, city, state, country].compact.join(', ')
   end
@@ -24,6 +26,13 @@ class Clinic < ActiveRecord::Base
     else
       super
     end
+  end
+
+  private
+
+  def get_address
+    geo_result = Geocoder.search("#{self.lat},#{self.lng}").first
+    self.address = geo_result.formatted_address
   end
 
 end
