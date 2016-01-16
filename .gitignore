@@ -9,6 +9,7 @@
 /.idea
 .keep
 /public/assets/*
+/public/system/*
 
 # Ignore the default SQLite database.
 /db/*.sqlite3

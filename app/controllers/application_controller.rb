@@ -16,7 +16,7 @@ class ApplicationController < ActionController::Base
     lng = params[:lng].to_f
     geo_result = Geocoder.search("#{lat},#{lng}").first
 
-    country = geo_result.address_components.last['long_name']
+    country = geo_result.address_components.last['short_name']
     formatted_address = geo_result.formatted_address
     physician = Physician.where(country: country)
 
@@ -27,9 +27,9 @@ class ApplicationController < ActionController::Base
     }
 
     if physician.any?
-      p.name = physician.name
-      p.phone = physician.phone
-      p.image = physician.image.url(:thumb)
+      p[:name] = physician.first.name
+      p[:phone] = physician.first.phone
+      p[:image] = physician.first.image.url(:thumb)
     end
 
     info = {
