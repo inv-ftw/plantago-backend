@@ -38,7 +38,7 @@ gem 'devise'
 gem 'paperclip'
 gem 'geocoder'
 
-gem 'unicorn', group: :production
+gem 'unicorn', '5.0.1' , group: :production
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
