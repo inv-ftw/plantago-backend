@@ -21,6 +21,7 @@ class Clinic < ActiveRecord::Base
         name: self.name,
         description: self.description,
         image: self.image.url(:medium),
+        thumb: self.image.url(:thumb),
         phone: self.phone,
         lat: self.lat,
         lng: self.lng,
