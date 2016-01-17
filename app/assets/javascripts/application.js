@@ -32,17 +32,24 @@ $(document).ready(function () {
     });
   }
 
+  function autoPlay() {
+    return setInterval(function () {
+      var currentId = parseInt($('ul.points li.active').data('id'));
+      currentId++;
+      if (currentId > 4) currentId = 1;
+      var $nextLi = $('ul.points li[data-id='+currentId+']');
+      slideImage($nextLi);
+    }, 5000);
+  }
+
+  var interval = autoPlay();
+
   $('ul.points li').click(function (e) {
     e.preventDefault();
+    clearInterval(interval);
     slideImage(this);
+    interval = autoPlay();
   });
 
-  var interval = setInterval(function () {
-    var currentId = parseInt($('ul.points li.active').data('id'));
-    currentId++;
-    if (currentId > 4) currentId = 1;
-    var $nextLi = $('ul.points li[data-id='+currentId+']');
-    slideImage($nextLi);
-  }, 5000);
 
 });

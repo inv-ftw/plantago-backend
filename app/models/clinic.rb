@@ -3,7 +3,7 @@ class Clinic < ActiveRecord::Base
   validates_uniqueness_of :phone, :name
   validates :phone, format: /\+[0-9]{7,}/
 
-  has_attached_file :image, styles: { thumb: '200x200>', medium: '370x270#'}
+  has_attached_file :image, styles: { thumb: '200x200#', medium: '370x270#'}
   validates_attachment_content_type :image, content_type: /\Aimage\/.*\Z/
 
   geocoded_by :country_address, :latitude  => :lat, :longitude => :lng
