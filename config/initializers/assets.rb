@@ -11,3 +11,4 @@ Rails.application.config.assets.version = '1.0'
 # Rails.application.config.assets.precompile += %w( search.js )
 Rails.application.config.assets.precompile += %w( smartphone.png )
 Rails.application.config.assets.precompile += %w( 1.png 2.png 3.png 4.png)
+Rails.application.config.assets.precompile += %w( logo_plantago_orange.png )
