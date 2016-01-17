@@ -21,20 +21,15 @@
       <!-- =========================================
            Navigation
       ========================================== -->
-      <nav class="navbar navbar-fixed-top" role="navigation">
+      <nav class="navbar" role="navigation">
         <div class="container">
           <div class="row">
             <div class="col-md-12">
               <!-- Navbar-Header -->
               <div class="navbar-header">
 
-                <!-- Mobile Menu -->
-                <button data-target=".navbar-collapse" data-toggle="collapse" class="navbar-toggle" type="button">
-                  <i class="icon icon_menu"></i>
-                </button>
-
                 <!-- Text-Logo -->
-                <a href="#top" class="navbar-brand scrollto" title="SmartMvp">
+                <a href="#top" class="navbar-brand scrollto" title="Plantago">
                   <span class="text-logo">Plantago</span>
                 </a>
 
@@ -47,10 +42,6 @@
 
               </div><!-- /End Navbar-Header -->
 
-              <!-- Navbar-Collapse -->
-              <div class="navbar-collapse collapse">
-
-              </div><!-- /End Navbar-Collapse -->
             </div><!-- /End Col -->
           </div><!-- /End Row -->
         </div><!-- /End Container -->
@@ -77,10 +68,21 @@
             </div><!-- /End Intro-Section -->
           </div><!-- /End Col -->
           <!-- App Showcase Image -->
-          <div class="col-sm-12 col-md-6 hidden-xs">
+          <div class="col-md-6 hidden-xs hidden-sm">
             <div class="app-box">
-              <%= image_tag 'devices.png', class: 'img-responsive' %>
+              <div class="img-wrapper">
+                <%= image_tag '1.png', id: '1' %>
+                <%= image_tag '2.png', id: '2' %>
+                <%= image_tag '3.png', id: '3' %>
+                <%= image_tag '4.png', id: '4' %>
+              </div>
             </div>
+            <ul class="points">
+              <li class="active" data-id="1"></li>
+              <li data-id="2"></li>
+              <li data-id="3"></li>
+              <li data-id="4"></li>
+            </ul>
           </div>
 
         </div><!-- /End Row -->
@@ -89,4 +91,54 @@
 
     </div><!-- /End Background Overlay -->
   </header>
+  <hr class="colored-divider" />
+  <section class="intro-features" id="about">
+    <div class="container">
+      <!-- Padding -->
+      <div class="wrapper-lg">
+        <div class="row">
+          <!-- Section Header Title -->
+          <div class="col-xs-12">
+            <h2>It's about making ideas happen</h2>
+            <p class="large">Spend less time worrying about front-end and more focusing on your product.</p>
+          </div>
+        </div>
+        <!-- Three Main Features with Icons -->
+        <div class="row">
+          <div class="col-sm-4 intro-content">
+            <div class="icon-lg">
+              <i class="ion-medkit"></i>
+            </div>
+            <h4>Quick Help</h4>
+            <p>Optio dolores expedita unde vel laudantium enim nisi eos distinctio, rem. Repellat repudiandae quos laborum magni.</p>
+          </div>
+          <div class="col-sm-4 intro-content">
+            <div class="icon-lg">
+              <i class="ion-information-circled"></i>
+            </div>
+            <h4>Easy to get info</h4>
+            <p>Praesentium reprehenderit quae, sequi deserunt laboriosam velit necessitatibus nulla ea optio, quis nam pariatur.</p>
+          </div>
+          <div class="col-sm-4 intro-content">
+            <div class="icon-lg">
+              <i class="ion-location"></i>
+            </div>
+            <h4>Everywhere</h4>
+            <p>Aperiam recusandae ipsa culpa, cupiditate magnam dolor molestiae, omnis, architecto possimus aperiam corrupti corporis.</p>
+          </div>
+        </div><!-- /End Row -->
+      </div><!-- /End Wrapper -->
+    </div><!-- /End Container -->
+  </section>
+  <section class="newsletter color-bg" id="newsletter">
+    <div class="container">
+      <div class="wrapper-sm">
+        <div class="row">
+          <div class="col-md-12">
+            <p class="text-center text-white">Created with <i class="ion-heart"></i> by Everteam</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 </div>
